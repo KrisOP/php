@@ -1,13 +1,4 @@
 <style>
-	h1{
-		text-align:center;
-	}
-
-	table{
-		background-color:#FFC;
-		padding:5px;
-		border:#666 5px solid;
-	}
 	
 	.no_validado{
 		font-size:18px;

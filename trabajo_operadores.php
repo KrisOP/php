@@ -4,6 +4,17 @@
 <meta charset="utf-8">
 <title>Trabajando con Operadores</title>
 
+<style>
+h1{
+		text-align:center;
+	}
+
+	table{
+		background-color:#FFC;
+		padding:5px;
+		border:#666 5px solid;
+	}
+</style>
 </head>
 
 <body>
