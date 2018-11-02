@@ -31,7 +31,7 @@
 <body>
 <h1>USANDO OPERADORES COMPARACIÓN</h1>
 
-<form action="" method="post" name="datos_usuario" id="datos_usuario">
+<form action="validacion.php" method="post" name="datos_usuario" id="datos_usuario">
   <table width="15%" align="center">
     <tr>
       <td>Nombre:</td>
