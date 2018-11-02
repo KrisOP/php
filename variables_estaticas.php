@@ -11,13 +11,17 @@
 
     function incrementavalor()
     {
-        $contador=0;
+        static $contador=0;//variable estatica (se ejecuta una sola vez)
         $contador++;
 
         echo $contador . "<br>";
     }
 
     incrementavalor();
+    incrementavalor();
+    incrementavalor();
+    incrementavalor();//ahora se conserva el valor de la variable
+
         
     ?>
 </body>
