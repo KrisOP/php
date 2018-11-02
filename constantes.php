@@ -16,8 +16,9 @@
 
 
         define ("AUTOR", "Kris");//declaracion de una constante
-        echo "El autor es: " .AUTOR;
-
+        echo "La linea de esta instruccion es: " .__LINE__ ."<br>"; //PARA SABER EN QUE LINEA ESTA LA INSTRUCCION
+        
+        echo "Estamos trabajando con este fichero: ". __FILE__;//para saber que fichero es
 
     ?>
 </body>
