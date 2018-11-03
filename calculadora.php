@@ -32,8 +32,23 @@ function calcular($operacion,$numero1,$numero2)
 
         if(!strcmp("Modulo",$operacion))
         {
-        echo "El resultado de la division es: ". ($numero1%$numero2);
+        echo "El resultado del modulo es: ". ($numero1%$numero2);
         }
 
+        if(!strcmp("Incremento",$operacion))
+        {
+            $numero1+2;
+            $resultado=$numero1;
+
+        echo "El resultado del incremento es: ". $resultado;
+        }
+
+        if(!strcmp("Decremento",$operacion))
+        {
+          $numero1--;
+          $resultado=$numero1;
+
+            echo "El resultado del decremento es: ". $resultado;
+        }
   }
 ?>
