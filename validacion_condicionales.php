@@ -25,6 +25,26 @@
 </style>
 
 <?php
-
+	if (isset($_POST["enviando"]))
+	{
+		$edad=$_POST["edad_usuario"];
+		echo "$edad";
+		if($edad<=18)
+		{
+			echo "eres menor de edad";
+		}
+		else if ($edad<=40)
+			{
+				echo "Eres Joven";
+			}
+		else if ($edad<=65)
+		{
+			echo "eres maduro, No Nicolas xD";
+		}
+		else 
+		{
+			echo "cuidate";
+		}
+	}
 	
 ?>

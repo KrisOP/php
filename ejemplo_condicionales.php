@@ -31,7 +31,7 @@
 </head>
 
 <body>
-<h1>USANDO CONDICIONALES</h1>
+<h1>USANDO CONDICIONALES GO</h1>
 
 <form action="validacion_condicionales.php" method="post" name="datos_usuario" id="datos_usuario">
   <table width="15%" align="center">
