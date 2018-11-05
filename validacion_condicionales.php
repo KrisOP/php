@@ -52,7 +52,8 @@
 
 	if (isset($_POST["enviando"]))
 	{
-		$edad=$_POST["edad_usuario"];
+		$contra=$_POST["contra"];
+		$nombre=$_POST["nombre_usuario"];
 		/*if ($edad<18)
 		{
 			 echo "Eres menor de edad y no tienes acceso";
@@ -63,7 +64,8 @@
 		}*/
 		
 		//echo $edad<18 ? "Eres menor de edad, No puedes acceder" : "Puedes acceder eres mayor";//antes de los dos puntos es true, despues de los dos puntos es falso
-		$resultado= $edad<18 ? "Eres menor de edad, No puedes acceder" : "Puedes acceder eres mayor";//Tambien se puede almacenar el resultado en una variable
-
+		//$resultado= $edad<18 ? "Eres menor de edad, No puedes acceder" : "Puedes acceder eres mayor";//Tambien se puede almacenar el resultado en una variable
+		$resultado= $nombre=="Kris" && $contra=="1234" ? "Datos correctos" : "Datos Incorrectos";//Tambien se puede almacenar el resultado en una variable
+		echo $resultado;
 	}	
 ?>
