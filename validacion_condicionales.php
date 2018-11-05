@@ -25,7 +25,8 @@
 </style>
 
 <?php
-	if (isset($_POST["enviando"]))
+	//USO DE OPPERADORES LOGICOS
+	/*if (isset($_POST["enviando"]))
 	{
 		$edad=$_POST["edad_usuario"];
 		echo "$edad";
@@ -45,6 +46,24 @@
 		{
 			echo "cuidate";
 		}
-	}
+	}*/
 	
+	//OPERADORES TERNARIOS
+
+	if (isset($_POST["enviando"]))
+	{
+		$edad=$_POST["edad_usuario"];
+		/*if ($edad<18)
+		{
+			 echo "Eres menor de edad y no tienes acceso";
+		}
+		else
+		{
+			echo "Erer mayor de edad, puedes acceder";
+		}*/
+		
+		//echo $edad<18 ? "Eres menor de edad, No puedes acceder" : "Puedes acceder eres mayor";//antes de los dos puntos es true, despues de los dos puntos es falso
+		$resultado= $edad<18 ? "Eres menor de edad, No puedes acceder" : "Puedes acceder eres mayor";//Tambien se puede almacenar el resultado en una variable
+
+	}	
 ?>
