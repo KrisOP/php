@@ -40,6 +40,7 @@
     }
 
     echo (frase_mayus ("esto es una prueba",false));
+
     ?>
 </body>
 </html>
