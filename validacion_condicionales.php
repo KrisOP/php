@@ -48,12 +48,13 @@
 		}
 	}*/
 	
-	//OPERADORES TERNARIOS
+	
 
 	if (isset($_POST["enviando"]))
 	{
 		$contra=$_POST["contra"];
 		$nombre=$_POST["nombre_usuario"];
+		//OPERADORES TERNARIOS
 		/*if ($edad<18)
 		{
 			 echo "Eres menor de edad y no tienes acceso";
@@ -61,11 +62,29 @@
 		else
 		{
 			echo "Erer mayor de edad, puedes acceder";
-		}*/
+		}
 		
 		//echo $edad<18 ? "Eres menor de edad, No puedes acceder" : "Puedes acceder eres mayor";//antes de los dos puntos es true, despues de los dos puntos es falso
 		//$resultado= $edad<18 ? "Eres menor de edad, No puedes acceder" : "Puedes acceder eres mayor";//Tambien se puede almacenar el resultado en una variable
 		$resultado= $nombre=="Kris" && $contra=="1234" ? "Datos correctos" : "Datos Incorrectos";//Tambien se puede almacenar el resultado en una variable
-		echo $resultado;
+		echo $resultado;*/
+		
+
+		//CONDICIONAL SWITCH
+		switch (true)
+		{
+			case $nombre=="Juan" && $contra=="1234":
+				echo "Usuario Autorizado. Hola Juan";
+				break;
+			case $nombre=="Maria" && $contra=="4321":
+				echo "Usuario Autorizado. Hola Maria";
+				break;
+			case $nombre=="Pedro" && $contra=="6789":
+				echo "Usuario Autorizado. Hola Pedro";
+				break;
+
+			default:
+				echo "Usuario No Autorizado";
+		}
 	}	
 ?>
