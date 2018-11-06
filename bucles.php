@@ -25,10 +25,24 @@
         echo "Estamos en el do While <br>";
         $var1--; 
 
-    }while($var1>1)
+    }while($var1>1);
 
 
     //Practica del for (bucle determinado)
+    
+    echo "<br> <br> Inicio del ciclo FOR <br>";
+
+    for ($i=0;$i<=10;$i++)
+    {
+        if ($i==3)
+        {
+            echo "Division por 3 no se vera<br>";
+            continue;//cuando la i valga 3 no se ejecutara la instruccion y continuara con el ciclo
+        }
+        echo "9 X $i = ". 9*$i. "<br>";
+
+
+    }
     ?>
 
 </body>
