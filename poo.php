@@ -59,6 +59,10 @@
 
         $mercedes->frenar();
 
+        $mercedes->arrancar();//objeto de la clase Camion
+
+        $mercedes->establece_color("verde", "Mercedes");//heredando las clases
+
     ?>
 </body>
 </html>

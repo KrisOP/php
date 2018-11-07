@@ -43,6 +43,12 @@
                 $this-> ruedas=8;//referencia a la clase coche //En su estado inicial tiene 4 ruedas
                 $this-> color="gris";
                 $this-> motor=2500;
-            }        
+            }
+            
+            function arrancar()
+            {
+                parent::arrancar();//Herencia> > Ejejcuta todo el codigo de la funcion de la clase padre y ademas ejecutar las instrucciones de la sub-clase
+                echo "<br>Camion  Arranca";//ejecuta despues de haber corrido todo el codigo de la funcion arrancar de la clase padre
+            }
         }
 ?>
