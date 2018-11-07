@@ -8,14 +8,16 @@
 </head>
 <body>
     <?php
-
-    function incrementa ($valor)
+    //Las funciones por parametros es para el valor directamente a la funcion o en una variable
+    function incrementa (&$valor)
     {
         $valor++;
         return $valor;
     }
+    $numero=7;
+    echo    incrementa ($numero). "<br>";
 
-    echo    incrementa (5);
+    echo $numero;
     ?>
 </body>
 </html>
