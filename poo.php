@@ -57,6 +57,8 @@
         
         echo "<br>El Camion Mercedes Benz tiene ".$mercedes->ruedas . "ruedas <br>";
 
+        $mercedes->frenar();
+
     ?>
 </body>
 </html>
