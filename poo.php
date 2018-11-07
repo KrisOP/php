@@ -8,7 +8,8 @@
 </head>
 <body>
     <?php
-        //Las clases es mejor el nombre la primera letra es mayuscula
+    include("auto.php");
+        /*//Las clases es mejor el nombre la primera letra es mayuscula
         class Coche 
         {
             var $ruedas;//declarando atribustos de  la clase coche
@@ -41,11 +42,11 @@
                 $this->color=$color_coche;
                 echo "El color de ". $nombre_coche ." es: ". $this->color;
             }
-        }
+        }*/
 
         $toyota = new Coche();//instancia perteneciente a la clase coche//es un objeto// lo que determine el constructor//dando un estado inicial
         $tesla = new Coche();
-
+        $mercedes = new Camion();//un objeto de la clase camion
 
         //hacer que el tesla gire
 
@@ -53,7 +54,8 @@
         echo "EL Tesla tiene ".$tesla->ruedas."  ruedas </br>";//acceder a una propiedad del objeto
 
         $toyota->establece_color("rojo", "Toyota");//parametro por valor en una instancia
-
+        
+        echo "<br>El Camion Mercedes Benz tiene ".$mercedes->ruedas . "ruedas <br>";
 
     ?>
 </body>
