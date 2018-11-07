@@ -35,6 +35,12 @@
             {
                 echo "El coche frena";
             }
+
+            function establece_color($color_coche,$nombre_coche)
+            {
+                $this->color=$color_coche;
+                echo "El color de ". $nombre_coche ." es: ". $this->color;
+            }
         }
 
         $toyota = new Coche();//instancia perteneciente a la clase coche//es un objeto// lo que determine el constructor//dando un estado inicial
@@ -44,7 +50,11 @@
         //hacer que el tesla gire
 
         echo "Tesla". $tesla->girar()."Hola <br>";//llamada de un objeto haga la tarea de girar
-        echo "EL Tesla tiene ".$tesla->ruedas."  ruedas";//acceder a una propiedad del objeto
+        echo "EL Tesla tiene ".$tesla->ruedas."  ruedas </br>";//acceder a una propiedad del objeto
+
+        $toyota->establece_color("rojo", "Toyota");//parametro por valor en una instancia
+
+
     ?>
 </body>
 </html>
