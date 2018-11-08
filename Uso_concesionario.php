@@ -11,7 +11,9 @@
 
 	include("Concesionario.php");
 	
-	Compra_vehiculo::$ayuda=10000;//para acceder al campo desde fuera de la clase, y como es estatico se puede modificar el dato y no es seguro
+	//Compra_vehiculo::$ayuda=10000;//para acceder al campo desde fuera de la clase, y como es estatico se puede modificar el dato y no es seguro
+	
+	Compra_vehiculo::descuento();//ejecutar el metodo estatico de la clase
 	
 	$compra_Antonio=new Compra_vehiculo("compacto");
 	
@@ -21,6 +23,10 @@
 	
 	echo "Antonio va a pagar " . $compra_Antonio->precio_final() . "<br>";
 	
+
+
+
+
 	$compra_Ana=new Compra_vehiculo("compacto");
 	
 	$compra_Ana->climatizador();

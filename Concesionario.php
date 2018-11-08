@@ -5,9 +5,10 @@
 		private $precio_base;
 		
 		//campo estatico para ser compartido en la compra de cualquier coche
-		static $ayuda=4500;//descuentos por parte del gobierno aca, se aplica al descuento de cualquier gama de coche
+		private static $ayuda=0;//descuentos por parte del gobierno aca, se aplica al descuento de cualquier gama de coche
 		
-				
+		
+
 		function Compra_vehiculo($gama){
 			
 			if($gama=="urbano"){
@@ -30,8 +31,10 @@
 			
 		}// fin constructor
 		
-		
-		
+		static function descuento()
+		{
+			self::$ayuda=4500; //hacer referencia a variables estaticas
+		}//fin de funcion estatica descuento
 		
 		function climatizador(){		
 			
