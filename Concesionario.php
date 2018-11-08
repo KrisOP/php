@@ -4,7 +4,8 @@
 		
 		private $precio_base;
 		
-		static $ayuda=4500;
+		//campo estatico para ser compartido en la compra de cualquier coche
+		static $ayuda=4500;//descuentos por parte del gobierno aca, se aplica al descuento de cualquier gama de coche
 		
 				
 		function Compra_vehiculo($gama){
@@ -34,7 +35,7 @@
 		
 		function climatizador(){		
 			
-			
+
 				$this->precio_base+=2000;					
 			
 			
@@ -74,7 +75,8 @@
 		
 		function precio_final(){
 			
-			$valor_final=$this->precio_base-self::$ayuda;
+			//restando el precio base con el descuento $ayuda
+			$valor_final=$this->precio_base-self::$ayuda;//como este campo pertenece a la clase no se usa this-> para referenciar sino self:: 
 			
 			return $valor_final;	
 			
