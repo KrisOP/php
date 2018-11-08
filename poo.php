@@ -47,7 +47,6 @@
         $toyota = new Coche();//instancia perteneciente a la clase coche//es un objeto// lo que determine el constructor//dando un estado inicial
         $tesla = new Coche();
         $mercedes = new Camion();//un objeto de la clase camion
-
         //hacer que el tesla gire
 
         echo "Tesla". $tesla->girar()."Hola <br>";//llamada de un objeto haga la tarea de girar
@@ -63,6 +62,8 @@
 
         $mercedes->establece_color("verde", "Mercedes");//heredando las clases
 
+
+        
     ?>
 </body>
 </html>

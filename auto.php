@@ -2,7 +2,8 @@
 //Las clases es mejor el nombre la primera letra es mayuscula
         class Coche 
         {
-            var $ruedas;//declarando atribustos de  la clase coche
+            //utilizamos la propiedad "private" para encapsular la propiedad ruedas y solo sea accesible desde la propia clase; solo aqui se puede modificar
+            private $ruedas;//declarando atribustos de  la clase coche
             var $color;
             var $motor;
 
