@@ -14,6 +14,11 @@
                 $this-> motor=1600;
             }
 
+            function get_ruedas()//esta es una funcion getter, solamente por utiliazar return
+            {
+                return $this->ruedas;
+            }
+
             function arrancar ()//declarando funcionalidades
             {
                 echo "El corre arranca";

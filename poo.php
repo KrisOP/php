@@ -48,6 +48,8 @@
         $tesla = new Coche();
         $mercedes = new Camion();//un objeto de la clase camion
         //hacer que el tesla gire
+
+       echo "El tesla tiene ". $tesla->get_ruedas() . " ruedas <br>"; //accediendo a la propiedad rueda usando un metodo getter
     ?>
 </body>
 </html>
