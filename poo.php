@@ -48,22 +48,6 @@
         $tesla = new Coche();
         $mercedes = new Camion();//un objeto de la clase camion
         //hacer que el tesla gire
-
-        echo "Tesla". $tesla->girar()."Hola <br>";//llamada de un objeto haga la tarea de girar
-        echo "EL Tesla tiene ".$tesla->ruedas."  ruedas </br>";//acceder a una propiedad del objeto
-
-        $toyota->establece_color("rojo", "Toyota");//parametro por valor en una instancia
-        
-        echo "<br>El Camion Mercedes Benz tiene ".$mercedes->ruedas . "ruedas <br>";
-
-        $mercedes->frenar();
-
-        $mercedes->arrancar();//objeto de la clase Camion
-
-        $mercedes->establece_color("verde", "Mercedes");//heredando las clases
-
-
-        
     ?>
 </body>
 </html>
