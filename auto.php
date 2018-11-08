@@ -5,7 +5,7 @@
             //utilizamos la propiedad "protected" para encapsular la propiedad ruedas y solo sea accesible desde la propia clase o desde clases a quien hereda; solo aqui se puede modificar
             protected $ruedas;//declarando atribustos de  la clase coche
             var $color;
-            var $motor;
+            protected $motor;
 
             function Coche ()//cuando un metodo dentro de una clase tenga el mismo nombre de la clase es un metodo constructor
             {
@@ -17,6 +17,11 @@
             function get_ruedas()//esta es una funcion getter, solamente por utiliazar return
             {
                 return $this->ruedas;
+            }
+
+            function get_motor()
+            {
+                return $this->motor;
             }
 
             function arrancar ()//declarando funcionalidades

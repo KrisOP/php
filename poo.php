@@ -52,6 +52,9 @@
        echo "El tesla tiene ". $tesla->get_ruedas() . " ruedas <br>"; //accediendo a la propiedad rueda usando un metodo getter
         
        echo "El mercedes tiene " .$mercedes->get_ruedas(). " ruedas";
-   ?>
+
+       echo "El toyota tiene un motor de ". $mercedes->get_motor(). "  cc";
+        
+    ?>
 </body>
 </html>
