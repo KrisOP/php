@@ -50,6 +50,8 @@
         //hacer que el tesla gire
 
        echo "El tesla tiene ". $tesla->get_ruedas() . " ruedas <br>"; //accediendo a la propiedad rueda usando un metodo getter
-    ?>
+        
+       echo "El mercedes tiene " .$mercedes->get_ruedas(). " ruedas";
+   ?>
 </body>
 </html>

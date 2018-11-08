@@ -2,8 +2,8 @@
 //Las clases es mejor el nombre la primera letra es mayuscula
         class Coche 
         {
-            //utilizamos la propiedad "private" para encapsular la propiedad ruedas y solo sea accesible desde la propia clase; solo aqui se puede modificar
-            private $ruedas;//declarando atribustos de  la clase coche
+            //utilizamos la propiedad "protected" para encapsular la propiedad ruedas y solo sea accesible desde la propia clase o desde clases a quien hereda; solo aqui se puede modificar
+            protected $ruedas;//declarando atribustos de  la clase coche
             var $color;
             var $motor;
 
@@ -33,7 +33,7 @@
                 echo "El coche frena";
             }
 
-            function establece_color($color_coche,$nombre_coche)
+            function set_color($color_coche,$nombre_coche)//metodo set para modificar la propiedad
             {
                 $this->color=$color_coche;
                 echo "El color de ". $nombre_coche ." es: ". $this->color;
