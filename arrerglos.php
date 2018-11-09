@@ -10,12 +10,13 @@
     <?php
 
     //ARRAY INDEXADOS
-   /* $semana []="Lunes";
+    $semana []="Lunes";
     $semana []="Martes";
     $semana []="Miercoles";
+    $semana []="Jueves";
     
 
-    $semana=array("Lunes", "Martes","Miercoles", "Jueves");
+    /*$semana=array("Lunes", "Martes","Miercoles", "Jueves");
     echo $semana[2];*/
 
     //ARRAY ASOCIADOS
@@ -37,10 +38,13 @@
         echo "A $clave le corresponde $valor <br>";
     }
 
+    //ORDENAR ELEMENTOS DE UN ARREGLO 
 
-
-
-
+    sort($semana);
+    for ($i=0;$i<count ($semana);$i++)
+    {
+        echo $semana[$i] . "<br>";
+    }
     ?>
 </body>
 </html>
