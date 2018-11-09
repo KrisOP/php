@@ -13,16 +13,34 @@
    /* $semana []="Lunes";
     $semana []="Martes";
     $semana []="Miercoles";
-    */
+    
 
     $semana=array("Lunes", "Martes","Miercoles", "Jueves");
-    echo $semana[2];
+    echo $semana[2];*/
 
     //ARRAY ASOCIADOS
 
     $datos=array("Nombre"=>"Kris","Apellido"=>"Ortega", "Sexo"=>"Hombre");
 
-    echo "<br>". $datos[Apellido];
+    echo "<br>". $datos[Apellido] . "<br>";
+
+    /*if (is_array($datos))//verificar si la variable es un arreglo
+    {
+        echo "Es un arreglo";
+    }*/
+
+    //RECORRER DENTRO DE UN ARRAY ASOCIATIVO
+
+    $datos["Pais"]="Nicaragua";//agregar nuevos campos en un arreglo asociativo
+    foreach ($datos as $clave=>$valor)
+    {
+        echo "A $clave le corresponde $valor <br>";
+    }
+
+
+
+
+
     ?>
 </body>
 </html>
