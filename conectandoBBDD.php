@@ -22,7 +22,7 @@
     mysqli_select_db($conexion,$db_nombre) or die ("No se encuentra la base de datos");
 
     mysqli_set_charset($conexion,"utf8");//para que se reconozca los simbolos latinos como el acento, la e;e
-    $consulta="select * from datospersonales";
+    $consulta="select * from productos where PAIS='España'";
 
     $resultado=mysqli_query($conexion,$consulta);
 
@@ -33,10 +33,15 @@
 
     while(($fila=mysqli_fetch_row($resultado))==true)//dejara de acceder cuando no haya informacion
     {
+        echo "<table width'50%' align='center' border='1px' dotted #FF000 margin='auto'> <tr> <td>";
         //$fila=mysqli_fetch_row($resultado);//
-        echo $fila[0];//accediendo al primer usuario
-        echo $fila[1];
-        echo $fila[2];
+        echo $fila[0] . "</td> <td>";//accediendo al primer usuario
+        echo $fila[1]. "</td> <td>";
+        echo $fila[2]. "</td> <td>";
+        echo $fila[3]. "</td> <td>";
+        echo $fila[4]. "</td> <td></tr></table>";
+
+        echo"<br>";
         echo"<br>";
     }
 
