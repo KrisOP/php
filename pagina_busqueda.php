@@ -8,6 +8,8 @@
 </head>
 <body>
 <?php
+
+   $busqueda=$_GET["buscar"];//almacenar lo que se esta pasando del cuadro de texto buscar 
    require("conexion.php");
    //$conexion=mysqli_connect($db_host,$db_usuario,$db_contra,$db_nombre);
 
@@ -22,7 +24,7 @@
     mysqli_select_db($conexion,$db_nombre) or die ("No se encuentra la base de datos");
 
     mysqli_set_charset($conexion,"utf8");//para que se reconozca los simbolos latinos como el acento, la e;e
-    $consulta="select * from productos where PAIS='España'";
+    $consulta="select * from productos where NOMBREARTICULO LIKE'%$busqueda%'";
 
     $resultado=mysqli_query($conexion,$consulta);
 
