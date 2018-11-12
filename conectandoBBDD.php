@@ -7,14 +7,8 @@
     <title>Document</title>
 </head>
 <body>
-    <?php
-    //CONEXION DE UNA BASES DE DATOS
-
-    $db_host="localhost";
-    $db_nombre="pruebas";
-    $db_usuario="root";
-    $db_contra="12345678";
-
+   <?php
+   require("conexion.php");
    //$conexion=mysqli_connect($db_host,$db_usuario,$db_contra,$db_nombre);
 
     $conexion=mysqli_connect($db_host,$db_usuario,$db_contra);
@@ -47,7 +41,6 @@
     }
 
     //para cerrar la conexxion para optimizar recursos
-
     mysqli_close($conexion);
 
     ?>
