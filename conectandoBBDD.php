@@ -31,15 +31,16 @@
     
     $registros=1;
 
-    while(($fila=mysqli_fetch_row($resultado))==true)//dejara de acceder cuando no haya informacion
+    //while(($fila=mysqli_fetch_row($resultado))==true)//dejara de acceder cuando no haya informacion
+    while(($fila=mysqli_fetch_array($resultado, MYSQL_ASSOC)))//Con MYSQL_ASSOC decimos que queremos trabajar con arreglos asociativos
     {
         echo "<table width'50%' align='center' border='1px' dotted #FF000 margin='auto'> <tr> <td>";
         //$fila=mysqli_fetch_row($resultado);//
-        echo $fila[0] . "</td> <td>";//accediendo al primer usuario
-        echo $fila[1]. "</td> <td>";
-        echo $fila[2]. "</td> <td>";
-        echo $fila[3]. "</td> <td>";
-        echo $fila[4]. "</td> <td></tr></table>";
+        echo $fila['SECCIÓN'] . "</td> <td>";//accediendo al primer usuario
+        echo $fila['NOMBREARTICULO']. "</td> <td>  ";
+        echo $fila['PAIS']. "</td> <td> </tr></table>";
+        //echo $fila[3]. "</td> <td>";
+        //echo $fila[4]. "</td> <td></tr></table>";
 
         echo"<br>";
         echo"<br>";
