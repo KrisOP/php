@@ -34,11 +34,6 @@ body{
 <form name="form1" method="get" action="Insertar_Registro.php">
   <table border="0" align="center">
     <tr>
-      <td>Código Artículo</td>
-      <td><label for="c_art"></label>
-      <input type="text" name="c_art" id="c_art"></td>
-    </tr>
-    <tr>
       <td>Sección</td>
       <td><label for="seccion"></label>
       <input type="text" name="seccion" id="seccion"></td>
@@ -57,11 +52,6 @@ body{
       <td>Fecha</td>
       <td><label for="fecha"></label>
       <input type="text" name="fecha" id="fecha"></td>
-    </tr>
-    <tr>
-      <td>Importado</td>
-      <td><label for="importado"></label>
-      <input type="text" name="importado" id="importado"></td>
     </tr>
     <tr>
       <td>País de Origen</td>
