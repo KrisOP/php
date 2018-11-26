@@ -15,9 +15,6 @@ $precio=$_GET["precio"];
 $fecha=$_GET["fecha"];
 $pais=$_GET["p_orig"];
 
-
-
-
 //$busqueda=$_GET["buscar"];//almacenar lo que se esta pasando del cuadro de texto buscar 
 require("conexion.php");
 //$conexion=mysqli_connect($db_host,$db_usuario,$db_contra,$db_nombre);
@@ -33,7 +30,7 @@ exit();
 mysqli_select_db($conexion,$db_nombre) or die ("No se encuentra la base de datos");
 
 mysqli_set_charset($conexion,"utf8");//para que se reconozca los simbolos latinos como el acento, la e;e
-$consulta="INSERT INTO productos (FECHA, NOMBREARTICULO, PAIS, PRECIO, SECCION) VALUES ('$fecha','$nom_art','$pais','$precio','$seccion')";
+$consulta="DELETE FROM  productos WHERE NOMBREARTICULO='$nom_art'";
 
 $resultado=mysqli_query($conexion,$consulta);
 
@@ -43,7 +40,18 @@ if($resultado==false)
 }
 else
 {
-    echo "Registro con exito";
+    //echo "Registro Eliminado";
+    
+    //echo mysqli_affected_rows ($conexion);
+
+    if (mysqli_affected_rows ($conexion)==0)//verificar si existen registros con algun parametro a eliminar
+    {
+        echo "no hay registros que eliminar con ese criterio";
+    }
+    else
+    {
+     echo "se han eliminado ". mysqli_affected_rows ($conexion). "regitros";   //nos muestra la cantidad de registros afectados
+    }
 }
 //para cerrar la conexxion para optimizar recursos
 mysqli_close($conexion);

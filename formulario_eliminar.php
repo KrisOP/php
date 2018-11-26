@@ -31,7 +31,7 @@ body{
 
 <body>
 <h1>Eliminar Artículos</h1>
-<form name="form1" method="get" action="Insertar_Registro.php">
+<form name="form1" method="get" action="eliminar_registro.php">
   <table border="0" align="center">
     <tr>
       <td>Sección</td>
