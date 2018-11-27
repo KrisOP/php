@@ -52,16 +52,18 @@
     else{
         //5. asociar las variables a los resultados de la consulta
         //$ok=mysqli_stmt_bind_result($resultado, $Nombre, $Pais, $Precio);
+        echo "Agregado nuevo registro : <br> <br>";
+        mysqli_stmt_close($resultado);
     }
 
     //6. leer la consulta
-    echo "Agregado nuevo registro : <br> <br>";
+    
 
     /*while (mysqli_stmt_fetch($resultado))
     {
         echo $Nombre . " " . $Pais . " " . $Precio . "<br>";
     }*/
-    mysqli_stm_close($resultado);
+    
 
     ?>
 </body>
