@@ -9,7 +9,9 @@
 <body>
 <?php
 
-   $busqueda=$_GET["buscar"];//almacenar lo que se esta pasando del cuadro de texto buscar 
+   $usuario=$_GET["usu"];
+   $contra=$_GET["con"];
+   //$contra=//almacenar lo que se esta pasando del cuadro de texto buscar 
    require("conexion.php");
    //$conexion=mysqli_connect($db_host,$db_usuario,$db_contra,$db_nombre);
 
@@ -25,7 +27,8 @@
 
     mysqli_set_charset($conexion,"utf8");//para que se reconozca los simbolos latinos como el acento, la e;e
     //$consulta="select * from productos where NOMBREARTICULO LIKE'%$busqueda%'";
-    $consulta="select * from productos where NOMBREARTICULO LIKE'%$busqueda'";
+    //inyeccion sql ('or'1'='1) introducir eso en el campo de contrasena y se mostrara todos los datos
+    $consulta="select * from datospersonales where Nombre='$usuario' AND NIF = '$contra'";
     
     echo "$consulta <br> <br>";
 
@@ -41,9 +44,9 @@
     {
         echo "<table width'50%' align='center' border='1px' dotted #FF000 margin='auto'> <tr> <td>";
         //$fila=mysqli_fetch_row($resultado);//
-        echo $fila['SECCIÓN'] . "</td> <td>";//accediendo al primer usuario
-        echo $fila['NOMBREARTICULO']. "</td> <td>  ";
-        echo $fila['PAIS']. "</td> <td> </tr></table>";
+        echo $fila['NIF'] . "</td> <td>";//accediendo al primer usuario
+        echo $fila['Nombre']. "</td> <td>  ";
+        echo $fila['Apellido']. "</td> <td> </tr></table>";
         //echo $fila[3]. "</td> <td>";
         //echo $fila[4]. "</td> <td></tr></table>";
 
