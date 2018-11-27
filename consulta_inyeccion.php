@@ -13,11 +13,8 @@
    require("conexion.php");
    //$conexion=mysqli_connect($db_host,$db_usuario,$db_contra,$db_nombre);
 
+   $pais=$_GET["pais"];
     $conexion=mysqli_connect($db_host,$db_usuario,$db_contra);
-
-    
-     $usuario=mysqli_real_escape_string ($conexion, $_GET["usu"]);//para que no permita ingresar con caracteres especiales y evitar las inyecciones sql
-     $contra=mysqli_real_escape_string ($conexion, $_GET["con"]);
 
     if (mysqli_connect_errno())//si existe algun error de conexion
     {
@@ -28,31 +25,39 @@
     mysqli_select_db($conexion,$db_nombre) or die ("No se encuentra la base de datos");
 
     //mysqli_addslashes()
-    mysqli_set_charset($conexion,"utf8");//para que se reconozca los simbolos latinos como el acento, la e;e
-    //$consulta="select * from productos where NOMBREARTICULO LIKE'%$busqueda%'";
-    //inyeccion sql ('or'1'='1) introducir eso en el campo de contrasena y se mostrara todos los datos
-    $consulta="DELETE from datospersonales where Nombre='$usuario' AND NIF = '$contra'";
-    
-    echo "$consulta <br> <br>";
+    mysqli_set_charset($conexion,"utf8");
 
-    mysqli_query($conexion, $consulta);
+    //1 paso crear instruccion sql
+    $sql= "SELECT NOMBREARTICULO, PAIS, PRECIO FROM productos where pais =?";
 
-    if (mysqli_affected_rows($conexion)>0)
+    //2 paso preparar la consulta
+
+    $resultado=mysqli_prepare($conexion,$sql);
+
+    //3. unir los parametros a la sentencia sql
+    $ok = mysqli_stmt_bind_param($resultado, 's', $pais);
+
+    //4. ejecutar la consulta
+
+    $ok=mysqli_stmt_execute($resultado);
+
+    if ($ok==false)
     {
-        echo "baja procesada";
+        echo "error en ejecutar la consulta";
     }
-    else
-    {
-        echo "no se ha encontrado el usuario";
+    else{
+        //5. asociar las variables a los resultados de la consulta
+        $ok=mysqli_stmt_bind_result($resultado, $Nombre, $Pais, $Precio);
     }
-    
-    /*if (mysqli_query($conexion, $consulta))
-    {
-        echo "baja procesada";
-        mysqli//si hay filas afectadas en la ultima consulta
-    }*/
 
-    mysqli_close($conexion);
+    //6. leer la consulta
+    echo "Articulos encontrados : <br> <br>";
+
+    while (mysqli_stmt_fetch($resultado))
+    {
+        echo $Nombre . " " . $Pais . " " . $Precio . "<br>";
+    }
+    mysqli_stm_close($resultado);
 
     ?>
 </body>
