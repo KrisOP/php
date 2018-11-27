@@ -13,7 +13,11 @@
    require("conexion.php");
    //$conexion=mysqli_connect($db_host,$db_usuario,$db_contra,$db_nombre);
 
-   $pais=$_GET["pais"];
+   $secc=$_GET["secc"];
+   $n_art=$_GET["n_art"];
+   $pre=$_GET["pre"];
+   $fec=$_GET["fec"];
+   $p_ori=$_GET["p_ori"];
     $conexion=mysqli_connect($db_host,$db_usuario,$db_contra);
 
     if (mysqli_connect_errno())//si existe algun error de conexion
@@ -28,14 +32,14 @@
     mysqli_set_charset($conexion,"utf8");
 
     //1 paso crear instruccion sql
-    $sql= "SELECT NOMBREARTICULO, PAIS, PRECIO FROM productos where pais =?";
+    $sql= "INSERT INTO  productos ( SECCION, NOMBREARTICULO, FECHA, PAIS, PRECIO) VALUES (?,?,?,?,?)";
 
     //2 paso preparar la consulta
 
     $resultado=mysqli_prepare($conexion,$sql);
 
     //3. unir los parametros a la sentencia sql
-    $ok = mysqli_stmt_bind_param($resultado, 's', $pais);
+    $ok = mysqli_stmt_bind_param($resultado, "ssssi", $secc,$n_art,$fec,$p_ori,$pre);
 
     //4. ejecutar la consulta
 
@@ -47,16 +51,16 @@
     }
     else{
         //5. asociar las variables a los resultados de la consulta
-        $ok=mysqli_stmt_bind_result($resultado, $Nombre, $Pais, $Precio);
+        //$ok=mysqli_stmt_bind_result($resultado, $Nombre, $Pais, $Precio);
     }
 
     //6. leer la consulta
-    echo "Articulos encontrados : <br> <br>";
+    echo "Agregado nuevo registro : <br> <br>";
 
-    while (mysqli_stmt_fetch($resultado))
+    /*while (mysqli_stmt_fetch($resultado))
     {
         echo $Nombre . " " . $Pais . " " . $Precio . "<br>";
-    }
+    }*/
     mysqli_stm_close($resultado);
 
     ?>
