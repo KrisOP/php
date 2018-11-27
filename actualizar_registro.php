@@ -13,7 +13,7 @@ $seccion=$_GET["seccion"];
 $nom_art=$_GET["n_art"];
 $precio=$_GET["precio"];
 $fecha=$_GET["fecha"];
-$pais=$_GET["p_orig"];
+$pais=$_GET["pais"];
 
 //$busqueda=$_GET["buscar"];//almacenar lo que se esta pasando del cuadro de texto buscar 
 require("conexion.php");
@@ -30,7 +30,7 @@ exit();
 mysqli_select_db($conexion,$db_nombre) or die ("No se encuentra la base de datos");
 
 mysqli_set_charset($conexion,"utf8");//para que se reconozca los simbolos latinos como el acento, la e;e
-$consulta="DELETE FROM  productos WHERE NOMBREARTICULO='$nom_art'";
+$consulta="UPDATE  productos SET NOMBREARTICULO='$nom_art', SECCION ='$seccion', PAIS ='$pais' where NOMBREARTICULO='$nom_art'";
 
 $resultado=mysqli_query($conexion,$consulta);
 
@@ -45,3 +45,17 @@ else
     //echo mysqli_affected_rows ($conexion);
 
     if (mysqli_affected_rows ($conexion)==0)//verificar si existen registros con algun parametro a eliminar
+    {
+        echo "no hay registros que actualizar con ese criterio";
+    }
+    else
+    {
+     echo "se han actualizado ". mysqli_affected_rows ($conexion). "regitros";   //nos muestra la cantidad de registros afectados
+    }
+}
+//para cerrar la conexxion para optimizar recursos
+mysqli_close($conexion);
+
+?>
+</body>
+</html>

@@ -39,7 +39,7 @@
         //echo "<table width'50%' align='center' border='1px' dotted #FF000 margin='auto'> <tr> <td>";
         //$fila=mysqli_fetch_row($resultado);//
         
-        echo "<form action='actualizar.php' method='get'>";//como le vamoss a pasar a traves de la url usamos el metodo get
+        echo "<form action='actualizar_registro.php' method='get'>";//como le vamoss a pasar a traves de la url usamos el metodo get
 
         echo "Seccion " . "<input type='text' name='seccion' value='" . $fila['SECCION']. "'><br>";
 
