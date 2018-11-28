@@ -14,7 +14,7 @@
         try{
 
             $base= new PDO ('mysql:host=localhost; dbname=pruebas','root','12345678');//instanciar la clase pdo
-            $base->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            $base->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);//decir a la BD que tome como propiedades las excepciones que sera capaz de crearlas en el caso que se produzca un error. Y podemos rescatar propiedades y metodos del objeto error//Osea podemos ver el tipo de error para identificarlo y solucionarlo facilmente
             $base->exec("SET CHARACTER SET utf8");
             $sql="SELECT NOMBREARTICULO,SECCION,PRECIO,PAIS FROM productos where SECCION= :SECC AND PAIS= :PORIG";//uso del marcador
             
