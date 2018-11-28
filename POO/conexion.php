@@ -6,7 +6,7 @@
     {
         protected $conexion_db;
 
-        public function conexion()
+        public function conexion()//metodo constructor
         {
             $this->conexion_db=new mysqli(BD_HOST,DB_USUARIO,DB_NOMBRE);
 
