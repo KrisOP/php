@@ -9,17 +9,18 @@
 <body>
     <?php
 
-    $buscar=$_GET["buscar"];
+    $seccion=$_GET["seccion"];
+    $pais=$_GET["pais"];
         try{
 
             $base= new PDO ('mysql:host=localhost; dbname=pruebas','root','12345678');//instanciar la clase pdo
             $base->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $base->exec("SET CHARACTER SET utf8");
-            $sql="SELECT NOMBREARTICULO,SECCION,PRECIO,PAIS FROM productos where NOMBREARTICULO=? ";
+            $sql="SELECT NOMBREARTICULO,SECCION,PRECIO,PAIS FROM productos where SECCION= :SECC AND PAIS= :PORIG";//uso del marcador
             
             
             $resultados=$base->prepare($sql);//devuelve un objeto de tipo PDO almacenado en resultado
-            $resultados->execute(array($buscar));//ejecutar consulta
+            $resultados->execute(array(":SECC"=>$seccion, ":PORIG"=>$pais));//ejecutar consulta y pasarle al marcador lo almacenado en $buscar
 
             while ($registro=$resultados->fetch(PDO::FETCH_ASSOC))
             {

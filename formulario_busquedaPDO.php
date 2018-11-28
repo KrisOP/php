@@ -8,7 +8,9 @@
 </head>
 <body>
     <form action="pagina_busquedaPDO.php" method="get">
-    <label>Buscar: <input type="text" name="buscar"></label>
+    Seccion <input type="text" name="seccion">
+    Pais Origen <input type="text" name="pais">
+    
 
     <input type="submit" name="enviando" value="Dale!">
 
