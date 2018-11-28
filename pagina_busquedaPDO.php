@@ -9,7 +9,7 @@
 <body>
     <?php
 
-    
+    $buscar=$_GET["buscar"];
         try{
 
             $base= new PDO ('mysql:host=localhost; dbname=pruebas','root','12345678');//instanciar la clase pdo
@@ -19,7 +19,7 @@
             
             
             $resultados=$base->prepare($sql);//devuelve un objeto de tipo PDO almacenado en resultado
-            $resultados->execute(array("Destornillador"));//ejecutar consulta
+            $resultados->execute(array($buscar));//ejecutar consulta
 
             while ($registro=$resultados->fetch(PDO::FETCH_ASSOC))
             {
