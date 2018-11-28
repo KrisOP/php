@@ -15,6 +15,22 @@ $array_productos=$productos->get_productos();
     <title>Document</title>
 </head>
 <body>
-    
+    <?php
+
+    foreach ($array_productos as $elemento)
+    {
+        echo "<table><tr><td>";
+        echo $elemento['SECCION']. "</td><td>";
+        echo $elemento['NOMBREARTICULO']. "</td><td>";
+        echo $elemento['FECHA']. "</td><td>";
+        echo $elemento['PAIS']. "</td><td>";
+        echo $elemento['PRECIO']. "</td><td></tr></table>";
+
+        echo "<br>";
+        echo "<br>";
+    }
+
+    ?>
+
 </body>
 </html>

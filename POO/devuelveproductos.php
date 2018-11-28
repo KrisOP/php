@@ -1,9 +1,9 @@
 <?php
-require ("conexion.php");
+require "conexion.php";
 
 //herencias de la clase conexion
 
-class DevuelveProductos extends conexion 
+class DevuelveProductos extends Conexion 
 {
     public function DevuelveProductos () {
 

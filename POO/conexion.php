@@ -1,16 +1,16 @@
 <?php
 
-    require ("config.php");
+    require "config.php";
 
-    class conexion
+    class Conexion
     {
         protected $conexion_db;
 
-        public function conexion()//metodo constructor
+        public function Conexion()//metodo constructor
         {
-            $this->conexion_db=new mysqli(BD_HOST,DB_USUARIO,DB_NOMBRE);
-
-            if ($this->conexion_db->connect_errno)
+            //$this->conexion_db=new mysqli('localhost','root', '12345678', 'pruebas');
+            $this->conexion_db=new mysqli(DB_HOST,DB_USUARIO, DB_CONTRA, DB_NOMBRE);
+            if ($this->conexion_db->connect_errno)//si existe un error
             {
                 echo "fallo al conectar a Mysql: ". $this->conexion_db->connect_error;
                 return;
