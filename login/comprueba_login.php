@@ -26,7 +26,9 @@
 
         if ($numero_registro!=0)
         {
-            header("location:usuarios_registrados1");
+            session_start();//iniciar una sesion para el usuario logueado
+            $_SESSION["usuario"]=$_POST["login"];//almacenar en la variable superglobal el login del usuario//
+            header("location:usuarios_registrados1.php");
         }
         else{
                 header("location:login.php");//redirigir a la pagina de login
