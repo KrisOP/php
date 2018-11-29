@@ -11,9 +11,9 @@ class DevuelveProductos extends Conexion
         parent::__construct();//ejecutar implicitamente el constructor padre 
     }
 
-    public function get_productos()
+    public function get_productos($dato)
     {
-        $resultado=$this->conexion_db->query('SELECT * FROM productos');
+        $resultado=$this->conexion_db->query('SELECT * FROM productos where PAIS="'.$dato.'"');
         $productos=$resultado->fetch_all(MYSQLI_ASSOC);//ARREGLO ASOCIATIVOS
         return $productos;
     }
