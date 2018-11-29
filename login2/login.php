@@ -7,8 +7,41 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Introduce tus datos<h1>
 
+ <?php
+        if (isset($_POST["enviar"]))//si hemos presionado el boton enviar
+        {
+                try {
+                
+                    $base=new PDO("mysql:host=localhost;dbname=pruebas","root","12345678");
+                    $base->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+                    $sql="SELECT * FROM usuarios WHERE usuarios=:login AND password=:password";
+
+                    $resultado=$base->prepare($sql);
+                    $login=htmlentities (addslashes($_POST["login"]));
+                    $password=htmlentities (addslashes($_POST["password"]));//convierte cualquier simbolo en html _ " ' -----addslashes escapa cualquier caracter extra;o para evitar la inyeccion sql
+                    $resultado->bindValue(":login",$login);//bindValue para que las variables de los otros formulario correspondada a lo que tengamos en los marcadores 
+                    $resultado->bindValue(":password",$password);
+                    $resultado->execute();
+
+                    $numero_registro=$resultado->rowCount();//verificar si existe el usuario. rowCount() devuelve el numero de registros al ejecutar una consulta
+
+                    if ($numero_registro!=0)
+                    {
+                        session_start();//iniciar una sesion para el usuario logueado
+                        $_SESSION["usuario"]=$_POST["login"];//almacenar en la variable superglobal el login del usuario//
+                        header("location:usuarios_registrados1.php");
+                    }
+                    else{
+                            header("location:login.php");//redirigir a la pagina de login
+                    }
+                } catch (Exception $e) {
+                    die ("Error".$e->getMessage());
+                }
+        }
+?>
+
+    <h1>Introduce tus datos<h1>
     <form action="<?php echo $_SERVER['PHP_SELF'];//hacer una peticion al servidor de la carga de la propia pagina?>" method="post">
     <table>
     <tr>
