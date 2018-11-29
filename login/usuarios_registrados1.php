@@ -24,6 +24,9 @@
     <br> <br>
     <a href="usuarios_registrados2.php">Pagina 2</a> <br>
     <a href="usuarios_registrados3.php">Pagina 3</a><br>
-    <a href="usuarios_registrados4.php">Pagina 4</a><br>
+    <a href="usuarios_registrados4.php">Pagina 4</a><br><br>
+    <a href="cierre.php">CERRAR SESION</a><br>
+
+
 </body>
 </html>

@@ -22,6 +22,8 @@
     <?php
     echo "Usuario: ". $_SESSION["usuario"];
     ?>
-    <a href="usuarios_registrados1.php">Volver</a>
+    <a href="usuarios_registrados1.php">Volver</a><br><br>
+
+    <a href="cierre.php">CERRAR SESION</a><br>
 </body>
 </html>
