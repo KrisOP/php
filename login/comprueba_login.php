@@ -26,7 +26,7 @@
 
         if ($numero_registro!=0)
         {
-            echo "<h2>Adelante</h2>";
+            header("location:usuarios_registrados1");
         }
         else{
                 header("location:login.php");//redirigir a la pagina de login
