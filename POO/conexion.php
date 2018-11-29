@@ -9,6 +9,20 @@
         public function Conexion()//metodo constructor
         {
            
+            
+            //**************** */CONEXION CON PDO*****************
+            try {
+              
+                //$this->$conexion_db=new PDO('mysql:host=localhost;dbname=pruebas','root','12345678');//creando conexion
+                $this->conexion_db= new PDO('mysql:host=localhost;dbname=pruebas','root','12345678');
+                $this->conexion_db->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+                $this->conexion_db->exec("SET CHARACTER SET utf8");
+                return $this->conexion_db;
+        } catch (Exception $e) {
+
+                 echo "La linea del error es: ". $e->getLine();
+            
+                }   
            
             //**************** */CONEXION CON MYSQLI*****************
             /*//$this->conexion_db=new mysqli('localhost','root', '12345678', 'pruebas');
@@ -22,18 +36,6 @@
            
             
             
-            //**************** */CONEXION CON PDO*****************
-            try {
-              
-                    $this->$conexion_db=new PDO ('mysql:host=localhost;dbname=pruebas','root','12345678');//creando conexion
-                    $this->$conexion_db->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
-                    $this  ->$conexion_db->exec("SET CHARACTER SET utf8");
-                    return $this->$conexion_db;
-            } catch (Exception $e) {
-
-                echo "La linea del error es: ". $e->getLine();
-                
-            }
         }
     }
 ?>
