@@ -19,7 +19,11 @@
     <h1>Bienvenido Usuarios</h1>
 
     <?php
-    echo "Hola: ". $_SESSION["usuario"];
+    echo "Usuario: ". $_SESSION["usuario"];
     ?>
+    <br> <br>
+    <a href="usuarios_registrados2.php">Pagina 2</a> <br>
+    <a href="usuarios_registrados3.php">Pagina 3</a><br>
+    <a href="usuarios_registrados4.php">Pagina 4</a><br>
 </body>
 </html>

@@ -17,9 +17,11 @@
     }
     ?>
     <h1>Bienvenido Usuarios</h1>
+    <p>Esta es la pagina4</p>
 
     <?php
-    echo "Hola: ". $_SESSION["usuario"];
+    echo "Usuario: ". $_SESSION["usuario"];
     ?>
+    <a href="usuarios_registrados1.php">Volver</a>
 </body>
 </html>
