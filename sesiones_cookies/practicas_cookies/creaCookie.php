@@ -8,6 +8,9 @@
 </head>
 <body>
     <?php
+
+        setcookie("idioma_seleccionado",$_GET["idioma"],time()+86400);//el $_GET["idioma] se va aguardar lo que se envia como parametro en inicio.php
+        header ("Location:ver_cookie.php");
     ?>
 </body>
 </html>
