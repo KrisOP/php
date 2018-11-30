@@ -9,7 +9,8 @@
 <body>
     <?php
         //se creara y guardara la cookie en el disco de la pc
-        setcookie("prueba","esta es la informacion de nuestra primera cookie");//Nombre de la cookie es prueba, y el valor o descripcion
+        //time() carga la hora actual y suma 30 segundos para mantener la cookie activa
+        setcookie("prueba","Esta es la informacion de nuestra primera cookie",time()+30);//Nombre de la cookie es prueba, y el valor o descripcion
         
     ?>
 </body>
