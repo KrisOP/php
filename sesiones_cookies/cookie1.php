@@ -10,7 +10,7 @@
     <?php
         //se creara y guardara la cookie en el disco de la pc
         setcookie("prueba","esta es la informacion de nuestra primera cookie");//Nombre de la cookie es prueba, y el valor o descripcion
-
+        
     ?>
 </body>
 </html>
