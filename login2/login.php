@@ -46,7 +46,7 @@
      
     if (!isset($_SESSION["usuario"]))//si no se ha iniciado session imprimir el formulario
     {
-    include ("formulario_login.html");
+    include ("formulario_login.php");
 
     }
     else{
