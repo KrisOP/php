@@ -12,7 +12,7 @@
 	$usuario= $_POST["usu"];
 	$contrasenia= $_POST["contra"];
 	
-	$cifrado=password_hash ($contrasenia,PASSWORD_DEFAULT);//FUNCION PARA ENCRIPTAR CONTRASENIA//DEFAULT GENERA LA SAL AUTOMATICA
+	$cifrado=password_hash ($contrasenia,PASSWORD_DEFAULT,array("cost"=>12) );//FUNCION PARA ENCRIPTAR CONTRASENIA//DEFAULT GENERA LA SAL AUTOMATICA//modificando el coste del password hash a 12
 				
 	try{
 
