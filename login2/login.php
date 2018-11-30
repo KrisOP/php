@@ -30,27 +30,30 @@
                     {
                         session_start();//iniciar una sesion para el usuario logueado
                         $_SESSION["usuario"]=$_POST["login"];//almacenar en la variable superglobal el login del usuario//
-                        header("location:usuarios_registrados1.php");
+                        //header("location:usuarios_registrados1.php");
                     }
                     else{
-                            header("location:login.php");//redirigir a la pagina de login
+                        echo "Error. Usuario o Contrasela incorrectas"; 
+                        //header("location:login.php");//redirigir a la pagina de login
                     }
                 } catch (Exception $e) {
                     die ("Error".$e->getMessage());
                 }
         }
 ?>
+<?php
+    //cargar el formulario solo si se ha iniciado sesion
+     
+    if (!isset($_SESSION["usuario"]))//si no se ha iniciado session imprimir el formulario
+    {
+    include ("formulario_login.html");
 
-    <h1>Introduce tus datos<h1>
-    <form action="<?php echo $_SERVER['PHP_SELF'];//hacer una peticion al servidor de la carga de la propia pagina?>" method="post">
-    <table>
-    <tr>
-    <td class="izq">
-    Login:</td><td class="der"><input type="text" name="login"></td></tr>
-    <tr><td class="izq">Password:</td><td class="der"><input type="password" name="password"></td></tr>
-    <tr><td coldspan="2"><input type="submit" name="enviar" value="login"></td></tr></table>
-</form>
-
+    }
+    else{
+        echo "Usuario: " .$_SESSION["usuario"];
+    }
+?>
+    
 <h2>Contenido de la WEB</h2>
 <p>Este es el contenido de la WEB</p>
 
