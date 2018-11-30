@@ -9,6 +9,9 @@
 <body>
 
  <?php
+
+ $autenticar=false;
+
         if (isset($_POST["enviar"]))//si hemos presionado el boton enviar
         {
                 try {
@@ -26,11 +29,14 @@
 
                     $numero_registro=$resultado->rowCount();//verificar si existe el usuario. rowCount() devuelve el numero de registros al ejecutar una consulta
 
-                    if ($numero_registro!=0)
+                    if ($numero_registro!=0)//se ha logueado exitosamente
                     {
-                        session_start();//iniciar una sesion para el usuario logueado
-                        $_SESSION["usuario"]=$_POST["login"];//almacenar en la variable superglobal el login del usuario//
-                        //header("location:usuarios_registrados1.php");
+                        $autenticar=true;
+
+                        if(isset($_POST["recordar"])) //si ha activado la casilla recordar
+                        {
+                            setcookie("nombre_usuario",$_POST["login"],time()+86400);
+                        }
                     }
                     else{
                         echo "Error. Usuario o Contrasela incorrectas"; 
@@ -42,15 +48,13 @@
         }
 ?>
 <?php
-    //cargar el formulario solo si se ha iniciado sesion
-     
-    if (!isset($_SESSION["usuario"]))//si no se ha iniciado session imprimir el formulario
+    if ($autenticar==false)//si no se ha loguedado
     {
-    include ("formulario_login.php");
-
-    }
-    else{
-        echo "Usuario: " .$_SESSION["usuario"];
+        if (!isset($_COOKIE["nombre_usuario"]))
+        {
+            include("formulario_login.php");
+        }
+        
     }
 ?>
     

@@ -17,6 +17,9 @@
         <tr><td class="izq">Password:</td><td class="der"><input type="password" name="password"></td></tr>
         <tr><td coldspan="2"><input type="submit" name="enviar" value="login"></td></tr></table>
     </form>
+
+    <h2>Contenido de la WEB</h2>
+<p>Este es el contenido de la WEB</p>
     
 </body>
 </html>

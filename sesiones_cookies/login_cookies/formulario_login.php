@@ -15,7 +15,7 @@
         <td class="izq">
         Login:</td><td class="der"><input type="text" name="login"></td></tr>
         <tr><td class="izq">Password:</td><td class="der"><input type="password" name="password"></td></tr>
-        <tr><td>Recordad: </td><td><input type="checkbox" name="recordar" id="recordar"><label for="recordar"></label></td></tr>
+        <tr><td>Recordar: </td><td><input type="checkbox" name="recordar" id="recordar"><label for="recordar"></label></td></tr>
         <tr><td coldspan="2"><input type="submit" name="enviar" value="login"></td></tr></table>
     </form>
     
