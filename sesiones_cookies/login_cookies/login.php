@@ -61,5 +61,13 @@
 <h2>Contenido de la WEB</h2>
 <p>Este es el contenido de la WEB</p>
 
+<?php
+
+if($autenticar==true || isset($_COOKIE["nombre_usuario"]))//si existe la cookie que muestre el nuevo contenido, o las siguientes paginas
+{
+    include ("zona_registrados.html");
+}
+?>
+
 </body>
 </html>
