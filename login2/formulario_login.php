@@ -7,8 +7,9 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Introduce tus datos<h1>
-        <form action="<?php echo $_SERVER['PHP_SELF'];//hacer una peticion al servidor de la carga de la propia pagina?>" method="post">
+    <h1>Introduce tus datos</h1>
+        <!--//hacer una peticion al servidor de la carga de la propia pagina-->
+        <form action="<?php echo $_SERVER['PHP_SELF']; ?> " method="post">
         <table>
         <tr>
         <td class="izq">
