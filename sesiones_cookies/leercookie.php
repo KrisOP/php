@@ -11,7 +11,7 @@
 
     if (isset($_COOKIE["prueba"]))//si existe la cookie
     {
-        echo $_COOKIE["prueba"];//buscar una cookie en el disco duro si extiste una cookie con ese nombre
+        echo $_COOKIE["prueba"] . "primer archivo con cookie";//buscar una cookie en el disco duro si extiste una cookie con ese nombre
  
     }
     else{
