@@ -16,13 +16,13 @@ try{
 	
 	$password=htmlentities(addslashes($_POST["password"]));
 	
-	
-	$base=new PDO("mysql:host=localhost; dbname=pruebas" , "root", "");
+	$contador=0;
+	$base=new PDO("mysql:host=localhost; dbname=pruebas" , "root", "12345678");
 	
 	$base->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 	
 	
-	$sql="SELECT * FROM USUARIOS_PASS WHERE USUARIOS= :login";
+	$sql="SELECT * FROM usuarios WHERE usuarios= :login";
 	
 	$resultado=$base->prepare($sql);	
 		
@@ -30,11 +30,20 @@ try{
 		
 		while($registro=$resultado->fetch(PDO::FETCH_ASSOC)){			
 			
-			echo "Usuario: " . $registro['USUARIOS'] . " Contraseña: " . $registro['PASSWORD'] . "<br>";			
-					
+			//echo "Usuario: " . $registro['usuarios'] . " Contraseña: " . $registro['pasword'] . "<br>";			
+			if (password_verify($password, $registro['password']))//devuelve true si contra cifrada y sin cifrar son iguales
+			{
+					$contador++;
+			}
 			
 		}
-		
+		if ($contador>0)
+			{
+				echo "Usuario registrado".$contador;
+			}else
+			{
+				echo "EL usuario no registrado".$contador;
+			}
 							
 		
 		
