@@ -12,11 +12,11 @@
 	$usuario= $_POST["usu"];
 	$contrasenia= $_POST["contra"];
 	
-	
+	$cifrado=password_hash ($contrasenia,PASSWORD_DEFAULT);//FUNCION PARA ENCRIPTAR CONTRASENIA//DEFAULT GENERA LA SAL AUTOMATICA
 				
 	try{
 
-		$base=new PDO('mysql:host=localhost; dbname=pruebas', 'root', '');
+		$base=new PDO('mysql:host=localhost; dbname=pruebas', 'root', '12345678');
 		
 		$base->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		
@@ -28,7 +28,7 @@
 		$resultado=$base->prepare($sql);		
 		
 		
-		$resultado->execute(array(":usu"=>$usuario, ":contra"=>$contrasenia));		
+		$resultado->execute(array(":usu"=>$usuario, ":contra"=>$cifrado));		
 		
 		
 		echo "Registro insertado";
