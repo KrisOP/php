@@ -43,7 +43,7 @@ $registros=$base->query("SELECT * FROM datos_usuarios")->fetchAll(PDO::FETCH_OBJ
       <td><?php echo $gente->apellido?></td>
       <td><?php echo $gente->direccion?></td>
  
-      <td class="bot"><input type='button' name='del' id='del' value='Borrar'></td>
+      <td class="bot"><a href="borrar.php?id=<?php echo $gente->id//pasando por la url un id ("?id=php echo...")?>"><input type='button' name='del' id='del' value='Borrar'></a></td>
       <td class='bot'><input type='button' name='up' id='up' value='Actualizar'></a></td>
     </tr>  
   <?php
