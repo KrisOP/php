@@ -9,7 +9,9 @@
 </head>
 
 <body>
-
+<?php
+include("conexion.php");
+?>
 
 <h1>CRUD<span class="subtitulo">Create Read Update Delete</span></h1>
 
