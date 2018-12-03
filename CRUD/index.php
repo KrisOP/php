@@ -34,14 +34,23 @@ $registros=$base->query("SELECT * FROM datos_usuarios")->fetchAll(PDO::FETCH_OBJ
     </tr> 
    
 		
+    <?php
+      foreach ($registros as $gente)://por cada objeto "gente" hay en el arreglo "registro" repetir el foreach?>
+
    	<tr>
-      <td></td>
-      <td></td>
-      <td></td>
+      <td><?php echo $gente->id//mostrando cada campo del registro?></td>
+      <td><?php echo $gente->nombre?></td>
+      <td><?php echo $gente->apellido?></td>
+      <td><?php echo $gente->direccion?></td>
  
       <td class="bot"><input type='button' name='del' id='del' value='Borrar'></td>
       <td class='bot'><input type='button' name='up' id='up' value='Actualizar'></a></td>
-    </tr>       
+    </tr>  
+  <?php
+
+    endforeach;//cerrando el foreach. Usando esta nomenclatura facilita la concatenacion de html con php
+  ?>
+
 	<tr>
 	<td></td>
       <td><input type='text' name='Nom' size='10' class='centrado'></td>
