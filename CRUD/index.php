@@ -11,6 +11,13 @@
 <body>
 <?php
 include("conexion.php");
+
+//$conexion=$base->query("SELECT * FROM datos_usuarios");
+//$registros =$conexion->fetchAll(PDO::FETCH_OBJ);//OBTENER TODAS LAS FILAS RESTANTE DEL CONJUNTO DE RESULTADOS//OBJ MANEJAR UN ARRAY DE OBJETOS
+
+$registros=$base->query("SELECT * FROM datos_usuarios")->fetchAll(PDO::FETCH_OBJ);//ESTA LINEA ES COMO TENER LAS MISMAS DOS LINEAS ANTERIORES
+
+
 ?>
 
 <h1>CRUD<span class="subtitulo">Create Read Update Delete</span></h1>
