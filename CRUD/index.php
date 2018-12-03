@@ -35,7 +35,6 @@ $registros=$base->query("SELECT * FROM datos_usuarios")->fetchAll(PDO::FETCH_OBJ
    
 		
    	<tr>
-      <td> </td>
       <td></td>
       <td></td>
       <td></td>
