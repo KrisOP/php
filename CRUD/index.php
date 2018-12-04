@@ -14,7 +14,7 @@ include("conexion.php");
 
 //$conexion=$base->query("SELECT * FROM datos_usuarios");
 //$registros =$conexion->fetchAll(PDO::FETCH_OBJ);//OBTENER TODAS LAS FILAS RESTANTE DEL CONJUNTO DE RESULTADOS//OBJ MANEJAR UN ARRAY DE OBJETOS
-//Para paginacion
+
 $tamanio_paginas=3;//cuantos registros por pagina
             
 if (isset($_GET["pagina"]))//se va ejecutar siempre y cuando le hayamos pasado pagina como parametro en la url//o sea link en la paginacion
@@ -36,17 +36,16 @@ if (isset($_GET["pagina"]))//se va ejecutar siempre y cuando le hayamos pasado p
 
 //para mostrar el inicio desde donde se va a tomar los registros para mostrarlos en la pagina
 $empezar_desde=($pagina-1)*$tamanio_paginas;//al cargar la pagina por primera vez podemos utilizar esta variable en el LIMIT para hacer la consulta
-
+$sql_total="SELECT * FROM datos_usuarios";
 $resultado=$base->prepare($sql_total);
 
 $resultado->execute(array());
-
 
 $num_filas=$resultado->rowCount();//devuelve cuantos registros a partir de la consulta
 $total_paginas=ceil($num_filas/$tamanio_paginas);//redondea el resultado para saber cuantas paginas va a tener la paginacion
 
 
-$registros=$base->query("SELECT * FROM datos_usuarios")->fetchAll(PDO::FETCH_OBJ);//ESTA LINEA ES COMO TENER LAS MISMAS DOS LINEAS ANTERIORES
+$registros=$base->query("SELECT * FROM datos_usuarios  LIMIT $empezar_desde,$tamanio_paginas")->fetchAll(PDO::FETCH_OBJ);//ESTA LINEA ES COMO TENER LAS MISMAS DOS LINEAS ANTERIORES
 if(isset($_POST["cr"]))//si se ha pulsado el boton cr
 {
     $nombre=$_POST["Nom"];
@@ -100,6 +99,15 @@ if(isset($_POST["cr"]))//si se ha pulsado el boton cr
       <td class='bot'><input type='submit' name='cr' id='cr' value='Insertar'></td></tr>    
   </table>
 </form>
+<?php
+//-----------------PAGINACION-----------------------------------//
+        
+        for($i=1;$i<=$total_paginas;$i++)
+        {
+            echo "<a href='?pagina=". $i . "'>" . $i ."</a>  ";//le pasamos como parametro en el enlace
+        }
+
+  ?>
 <p>&nbsp;</p>
 </body>
 </html>
