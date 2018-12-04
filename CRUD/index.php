@@ -16,12 +16,22 @@ include("conexion.php");
 //$registros =$conexion->fetchAll(PDO::FETCH_OBJ);//OBTENER TODAS LAS FILAS RESTANTE DEL CONJUNTO DE RESULTADOS//OBJ MANEJAR UN ARRAY DE OBJETOS
 
 $registros=$base->query("SELECT * FROM datos_usuarios")->fetchAll(PDO::FETCH_OBJ);//ESTA LINEA ES COMO TENER LAS MISMAS DOS LINEAS ANTERIORES
+if(isset($_POST["cr"]))//si se ha pulsado el boton cr
+{
+    $nombre=$_POST["Nom"];
+    $apellido=$_POST["Ape"];
+    $direccion=$_POST["Dir"];
 
+    $sql="INSERT INTO datos_usuarios (nombre,apellido, direccion) VALUES (:nom, :ape, :dir)";
+    $resultado=$base->prepare($sql);
+    $resultado->execute(array(":nom"=>$nombre, ":ape"=>$apellido, ":dir"=>$direccion));
+    header("Location:index.php");
+}
 
 ?>
 
 <h1>CRUD<span class="subtitulo">Create Read Update Delete</span></h1>
-
+<form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">
   <table width="50%" border="0" align="center">
     <tr >
       <td class="primera_fila">Id</td>
@@ -44,7 +54,7 @@ $registros=$base->query("SELECT * FROM datos_usuarios")->fetchAll(PDO::FETCH_OBJ
       <td><?php echo $gente->direccion?></td>
  
       <td class="bot"><a href="borrar.php?id=<?php echo $gente->id//pasando por la url un id ("?id=php echo...")?>"><input type='button' name='del' id='del' value='Borrar'></a></td>
-      <td class='bot'><input type='button' name='up' id='up' value='Actualizar'></a></td>
+      <td class='bot'><a href="editar.php?id=<?php echo $gente->id?> & nom=<?php echo $gente->nombre?> & ape=<?php echo $gente->apellido?> & dir=<?php echo $gente->direccion?>"><input type='button' name='up' id='up' value='Actualizar'></a></td>
     </tr>  
   <?php
 
@@ -55,10 +65,10 @@ $registros=$base->query("SELECT * FROM datos_usuarios")->fetchAll(PDO::FETCH_OBJ
 	<td></td>
       <td><input type='text' name='Nom' size='10' class='centrado'></td>
       <td><input type='text' name='Ape' size='10' class='centrado'></td>
-      <td><input type='text' name=' Dir' size='10' class='centrado'></td>
+      <td><input type='text' name='Dir' size='10' class='centrado'></td>
       <td class='bot'><input type='submit' name='cr' id='cr' value='Insertar'></td></tr>    
   </table>
-
+</form>
 <p>&nbsp;</p>
 </body>
 </html>
