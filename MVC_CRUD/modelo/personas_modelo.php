@@ -14,7 +14,8 @@ class Personas_modelo{
 
     public function get_personas()//metodo getter para devolver los productos
     {
-        $consulta=$this->db->query("SELECT * FROM datos_usuarios"); //this->db es la conexion//luego query para la ejecucion de una comsulta 
+        require("paginacion.php");
+        $consulta=$this->db->query("SELECT * FROM datos_usuarios LIMIT $empezar_desde, $tamanio_paginas"); //this->db es la conexion//luego query para la ejecucion de una comsulta 
         
         while ($filas=$consulta->fetch(PDO::FETCH_ASSOC)){//PARA LEER ARREGLOS ASOCIATIVOS
 

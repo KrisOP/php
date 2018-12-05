@@ -1,5 +1,8 @@
 <?php
 
+require_once("conexion.php");
+
+$base=Conectar::conexion();
 $tamanio_paginas=3;//cuantos registros por pagina
             
 if (isset($_GET["pagina"]))//se va ejecutar siempre y cuando le hayamos pasado pagina como parametro en la url//o sea link en la paginacion

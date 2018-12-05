@@ -7,7 +7,10 @@
     <title>Document</title>
 </head>
 <body>
+<?php
 
+require("modelo/paginacion.php");
+?>
 
 <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">
   <table width="50%" border="0" align="center">
@@ -50,10 +53,10 @@
 <?php
 //-----------------PAGINACION-----------------------------------//
         
-        /*for($i=1;$i<=$total_paginas;$i++)
+        for($i=1;$i<=$total_paginas;$i++)
         {
             echo "<a href='?pagina=". $i . "'>" . $i ."</a>  ";//le pasamos como parametro en el enlace
-        }*/
+        }
 
   ?>
 </table>    
