@@ -8,8 +8,7 @@
 </head>
 <body>
 
-<table>
-<tr><td>NOMBRE DEL ARTICULO</td>
+
 <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">
   <table width="50%" border="0" align="center">
     <tr >
@@ -32,8 +31,8 @@
       <td><?php echo $gente["apellido"]?></td>
       <td><?php echo $gente["direccion"]?></td>
  
-      <td class="bot"><a href="borrar.php?id=<?php echo $gente->id//pasando por la url un id ("?id=php echo...")?>"><input type='button' name='del' id='del' value='Borrar'></a></td>
-      <td class='bot'><a href="editar.php?id=<?php echo $gente->id?> & nom=<?php echo $gente->nombre?> & ape=<?php echo $gente->apellido?> & dir=<?php echo $gente->direccion?>"><input type='button' name='up' id='up' value='Actualizar'></a></td>
+      <td class="bot"><a href="borrar.php?id=<?php echo $gente["id"]//pasando por la url un id ("?id=php echo...")?>"><input type='button' name='del' id='del' value='Borrar'></a></td>
+      <td class='bot'><a href="editar.php?id=<?php echo $gente["id"]?> & nom=<?php echo $gente["id"]?> & ape=<?php echo $gente["apellido"]?> & dir=<?php echo $gente["apellido"]?>"><input type='button' name='up' id='up' value='Actualizar'></a></td>
     </tr>  
   <?php
 
@@ -48,7 +47,15 @@
       <td class='bot'><input type='submit' name='cr' id='cr' value='Insertar'></td></tr>    
   </table>
 </form>
+<?php
+//-----------------PAGINACION-----------------------------------//
+        
+        /*for($i=1;$i<=$total_paginas;$i++)
+        {
+            echo "<a href='?pagina=". $i . "'>" . $i ."</a>  ";//le pasamos como parametro en el enlace
+        }*/
 
+  ?>
 </table>    
 </body>
 </html>
