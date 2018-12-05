@@ -1,10 +1,10 @@
 <?php
-require_once("../modelo/productos_modelo.php");
+require_once("modelo/productos_modelo.php");//incluyendo el modelo
 //llamar al getter y ejecutar el constructos del modelo
-$producto = new Productos_model ();//instanciar la clase en el objeto
+$productos = new Productos_modelo ();//instanciar la clase en el objeto
 
-$matrizProducto=$producto->get_productos();
+$matrizProducto=$productos->get_productos();
 
-require_once("../vista/productos_view.php");
+require_once("vista/productos_view.php");//incluyendo la vista 
 
 ?>

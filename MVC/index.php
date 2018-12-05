@@ -6,7 +6,19 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
+<style>
+h1{
+text-aline:center;
+}
+</style>
 <body>
+    <h1>MODELO VISTA CONTROLADOR </h1>
+    <br><br>
+
+    <?php
     
+        require_once("controlador/productos_controlador.php");
+
+    ?>
 </body>
 </html>
