@@ -18,7 +18,7 @@ table{
 
 <body>
 
-<form name="formulario_contacto" method="post" action="Enviar_mail.php">
+<form name="formulario_contacto" method="post" action="enviar_mail.php">
 <table width="500px">
 <tr>
 <td>
