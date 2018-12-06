@@ -8,7 +8,10 @@
 </head>
 <body>
     <?php
-    //require ("datos_conexion.php");
+
+    //variables para almacenar los datos de los archivos
+    $id="";
+    $tipo="";
     require("datos_conexion.php");
 
 
@@ -24,21 +27,28 @@
 
         mysqli_set_charset($conexion,"utf8");//para que se reconozca los simbolos latinos como el acento, la e;e
 
-        $consulta="SELECT FOTO FROM PRODUCTOS WHERE id_productos='15'";
+        $consulta="SELECT * FROM archivos WHERE id=3";
 
         $resultado=mysqli_query($conexion,$consulta);
 
         while ($fila=mysqli_fetch_array($resultado))
         {
-            $ruta_img=$fila["FOTO"];
+            $id=$fila["id"];
+            $contenido=$fila["Contenido"];
+            $tipo=$fila["Tipo"];
+        
         }
 
-            echo $ruta_img;
+            echo "ID: ". $id;
+            echo "<br> <br>Tipo: ". $tipo . "<br><br><br>";
+
+            //para mostrar el archivo necesitamos un contenedor
+            echo "<div style='width=500px;height:400px;'> <embed height='100%' width='100%' name='embed_content' src='data:application/pdf;base64,".base64_encode($contenido)."'/></div>";
+
 
     ?>
 
     <div> 
-        <img src="/practice_php/imagenes_servidor/cargas/<?php echo $ruta_img;?>" alt="Imagen del Articulo 16" width="25%"/>
     </div>
 </body>
 </html>
