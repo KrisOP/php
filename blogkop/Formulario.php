@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Blog Píldoras</title>
+<title>Blog KOP</title>
 <style>
 
 h2{
@@ -28,7 +28,7 @@ td{
 
 <body>
 <h2>Nueva entrada</h2>
-<form action="Insertar Contenido.php" method="post" enctype="multipart/form-data" name="form1">
+<form action="Insertar_contenido.php" method="post" enctype="multipart/form-data" name="form1">
 <table >
 <tr>
   <td>Título: 
