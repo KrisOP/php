@@ -20,6 +20,27 @@
         exit();
     }
 
+    $miConsulta="SELECT * FROM contenido ORDER BY fecha DESC";
+
+    if ($resultado=mysqli_query($miConexion,$miConsulta))
+    {
+        while ($registro=mysqli_fetch_assoc($resultado)) 
+        {
+            echo "<h3>". $registro['titulo']. "</h3>";
+            echo "<h4>" . $registro['fecha']. "</h4>";
+            //echo  $registro['comentario'];
+            echo "<div>". $registro['comentario']. "</div><br/><br/>";
+            
+            //evaluar si tenemos una imagen almacenada
+
+            if($registro['imagen']!="")//si el campo de la imagen no esta vacia entonces mostrarla
+            {
+                    echo "<img src='imagenes/".$registro['imagen']."'.width='10px'/>";
+            } 
+            
+            echo "<hr/>"; 
+        }
+    }
 
     ?>
 </body>

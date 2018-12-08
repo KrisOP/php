@@ -67,5 +67,8 @@
 
         echo "</br> se ha agragado el comentario con exito";
     ?>
+
+    <a href="Formulario.php">Agregar nueva entrada al blog</a>
+    <a href="inicio_blog.php">Ir al blog</a>
 </body>
 </html>
