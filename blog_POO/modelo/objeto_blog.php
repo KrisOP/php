@@ -64,6 +64,4 @@ class objeto_blog
     }
 }
 
-
-
 ?>
