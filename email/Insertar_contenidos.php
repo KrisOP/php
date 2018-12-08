@@ -18,7 +18,7 @@
             exit();
         }
 
-        if ($_FILES['imagen']['error'])
+        if ($_FILES['imagen']['error'])//si existe un error al dar subir una entrada. (especificamente al cargar una imagen)
         {
             switch($_FILES['imagen']['error'])
             {
@@ -39,7 +39,7 @@
         }else
         {
             echo "Entrada realizada con exito";
-            //$_FILES['imagen']['name] es el nombre de la imagen y a su vez lo que esta almacenado en la base de datos
+            //$_FILES['imagen']['name] es el nombre de la imagen y a su vez lo que se almacenara en la base de datos
             if (isset($_FILES['imagen']['name']) && ($_FILES['imagen']['error']==UPLOAD_ERR_OK))//si hay un nombre de imagen y no hay error 
             {
                 $destino_de_ruta="imagenes/";//la primera parte de la ruta para buscar el nombre de la imagen en el directorio
