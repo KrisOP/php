@@ -28,7 +28,7 @@ td{
 
 <body>
 <h2>Nueva entrada</h2>
-<form action="Insertar_contenido.php" method="post" enctype="multipart/form-data" name="form1">
+<form action="Insertar_contenidos.php" method="post" enctype="multipart/form-data" name="form1">
 <table >
 <tr>
   <td>Título: 

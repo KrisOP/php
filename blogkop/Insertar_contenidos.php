@@ -52,8 +52,20 @@
             }
         }
 
-        $miconsulta="INSERT INTO contenido (titulo, fecha, comentario, imagen) VALUES ('titulo','fecha,'comentario,'imagen')";
-    
+        $titulo=$_POST['campo_titulo'];
+        //$fecha=date("Y-m-d H:i:s");//almacenando la fecha actual
+        $comentario=$_POST['area_comentarios'];
+        $imagen=$_FILES['imagen']['name'];
+        echo $imagen ."<br><br>";
+       // $miconsulta= "INSERT INTO contenido (titulo, fecha, comentario, imagen) VALUES ('" . $titulo . "','" . $fecha '" . $comentario . "','" . $imagen ."')";
+        $miconsulta="INSERT INTO contenido (titulo,fecha,comentario,imagen) VALUES ('$titulo',NOW(),'$comentario','$imagen')";
+        $resultado=mysqli_query($miConexion,$miconsulta);
+
+        //cerramos la conexion
+
+        mysqli_close($miConexion);
+
+        echo "</br> se ha agragado el comentario con exito";
     ?>
 </body>
 </html>
