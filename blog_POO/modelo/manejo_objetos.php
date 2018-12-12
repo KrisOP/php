@@ -1,6 +1,6 @@
 <?php
 
-include("objeto_blog.php");
+include_once("objeto_blog.php");
 
     class manejo_objetos
     {
@@ -45,7 +45,7 @@ include("objeto_blog.php");
         public function insertarContenido(objeto_blog $blog)//$blog es una variable de tipo objeto_blog
         {
             //$sql="INSERT INTO contenido (titulo, fecha, comentario, imagen) VALUES ('".$blog->getTitulo(). "','".$blog->getFecha(). "','".$blog->getComentario(). "','".$blog->getImagen(). "')";
-            $sql="INSERT INTO contenido (Titulo, Fecha, Comentario, Imagen) VALUES ('".$blog->getTitulo(). "','".$blog->getFecha(). "','".$blog->getComentario(). "','".$blog->getTitulo(). "','".$blog->getImagen(). "')";
+            $sql="INSERT INTO contenido (Titulo, Fecha, Comentario, Imagen) VALUES ('".$blog->getTitulo(). "','".$blog->getFecha(). "','".$blog->getComentario(). "','".$blog->getImagen(). "')";
             
             $this->conexion->exec($sql);
         }

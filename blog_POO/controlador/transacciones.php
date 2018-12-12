@@ -1,8 +1,8 @@
 <?php>
 //interactua entre la vista y el modelo
 
-include("../modelo/objeto_blog.php");
-include("../modelo/manejo_objetos.php");
+include_once("../modelo/objeto_blog.php");
+include_once("../modelo/manejo_objetos.php");
 
 try {
     $miconexion=new PDO ('mysql:host=localhost; dbname=blogkop','root','12345678');
@@ -34,7 +34,7 @@ try {
             //$_FILES['imagen']['name] es el nombre de la imagen y a su vez lo que se almacenara en la base de datos
             if (isset($_FILES['imagen']['name']) && ($_FILES['imagen']['error']==UPLOAD_ERR_OK))//si hay un nombre de imagen y no hay error 
             {
-                $destino_de_ruta="imagenes/";//la primera parte de la ruta para buscar el nombre de la imagen en el directorio
+                $destino_de_ruta='../imagenes/';//la primera parte de la ruta para buscar el nombre de la imagen en el directorio
 
                 move_uploaded_file($_FILES['imagen']['tmp_name'],$destino_de_ruta . $_FILES['imagen']['name']);//mover del directorio temporaral al directorio deseado//VIDEO 90 MIN 16
                 echo "El archivo ". $_FILES['imagen']['name']."se ha copiado en el directorio de imagenes";
@@ -49,7 +49,7 @@ try {
     $blog=new objeto_blog();
 
     $blog->setTitulo(htmlentities(addslashes($_POST["campo_titulo"]),ENT_QUOTES));
-    $blog->setFecha(Date("Y-m-d H:i:s"));
+    $blog->setFecha(date_default_timezone_set('America/Managua'));
     $blog->setComentario(htmlentities(addslashes($_POST["area_comentarios"]),ENT_QUOTES));
     $blog->setImagen($FILES["imagen"]["name"]);
 
